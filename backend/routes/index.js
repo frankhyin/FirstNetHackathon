@@ -58,10 +58,7 @@ router.get('/', function(req, res, next) {
 router.get('/texts', function(req, res, next) {
     Text.find({})
     .then(function(result) {
-        res.send({
-            success: true,
-            texts: result
-        });
+        res.send(result);
     })
     .catch(function(error) {
         res.send({
@@ -74,10 +71,7 @@ router.get('/texts', function(req, res, next) {
 router.get('/newestText', function(req, res, next) {
     Text.find({}).sort({_id: -1}).limit(1)
     .then(function(result) {
-        res.send({
-            success: true,
-            newestText: result
-        });
+        res.send([].concat(result));
     })
     .catch(function(error) {
         res.send({
