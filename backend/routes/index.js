@@ -58,10 +58,9 @@ router.get('/', function(req, res, next) {
 router.get('/texts', function(req, res, next) {
     Text.find({})
     .then(function(result) {
-        res.send({
-            success: true,
-            texts: result
-        });
+        res.send(
+            result
+);
     })
     .catch(function(error) {
         res.send({
