@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var connect = process.env.MONGODB_URI;
+var connect = "mongodb://jennafrank:jennafrank@ds123399.mlab.com:23399/sffirstnet";
 var Schema = mongoose.Schema;
 
 mongoose.connect(connect);
