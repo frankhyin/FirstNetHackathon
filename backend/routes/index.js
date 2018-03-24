@@ -89,18 +89,8 @@ router.post('/text/new', function(req, res, next) {
     });
 
     // ToDo how to use for plain text
-
-    // toneParameters.tone_input = req.body.text;
-    //
-    // tone_analyzer.toneChat(toneParameters, function(error, response) {
-    //         if (error)
-    //             console.log('error:', error);
-    //         else
-    //             console.log( JSON.stringify(response, null, 2));
-    //     }
-    // );
     var toneParameters = {
-        'tone_input': "'" + req.body.text + "'",
+        'tone_input': "'" + req.body.message + "'",
         'content_type': 'text/plain'
     };
     tone_analyzer.tone(toneParameters, function(error, response) {
