@@ -130,25 +130,12 @@ public class RadioActivity extends MainActivity {
                             .add("message", result.get(0))
                             .add("time", System.currentTimeMillis() + "")
                             .add("location", location + "")
+                            .add("name", "Jenna")
+                            .add("role", "South Side Fire Department")
                             .build();
-                    Request request = new Request.Builder()
-                            .url("https://1d0d9a9f.ngrok.io/text/new" +
-                                    "")
-                            .post(formBody)
-                            .build();
-                    client.newCall(request).enqueue(new Callback() {
-                        @Override
-                        public void onFailure(Call call, IOException e) {
-                            Log.e(this.getClass().getName(), e.toString());
-                        }
 
-                        @Override
-                        public void onResponse(Call call, final Response response) throws IOException {
-                            // success case
-                            String result = response.body().string();
-                        }
-                    });
-
+                    Network localSingleton = Network.getInstance();
+                    localSingleton.postPoint(formBody, "text/new");
 
                 }
                 break;

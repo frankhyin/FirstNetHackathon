@@ -26,7 +26,6 @@ public abstract class MainActivity extends AppCompatActivity implements BottomNa
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        //sharedPref = this.getPreferences(Context.MODE_PRIVATE);
     }
 
     private void updateNavigationBarState() {

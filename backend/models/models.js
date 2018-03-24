@@ -13,6 +13,14 @@ var textSchema = Schema({
         type: String,
         required: false
     },
+    name: {
+        type: String,
+        required: false
+    },
+    role: {
+        type: String,
+        required: false
+    },
     location: {
         type: String,
         required: false
