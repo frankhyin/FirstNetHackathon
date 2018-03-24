@@ -58,14 +58,12 @@ router.get('/', function(req, res, next) {
 router.get('/texts', function(req, res, next) {
     Text.find({})
     .then(function(result) {
-        res.send({
-            success: true,
-            texts: result
-        });
+        res.send(
+            result
+        );
     })
     .catch(function(error) {
         res.send({
-            success: false,
             error: error
         })
     })
@@ -74,14 +72,10 @@ router.get('/texts', function(req, res, next) {
 router.get('/newestText', function(req, res, next) {
     Text.find({}).sort({_id: -1}).limit(1)
     .then(function(result) {
-        res.send({
-            success: true,
-            newestText: result
-        });
+        res.send(result);
     })
     .catch(function(error) {
         res.send({
-            success: false,
             error: error
         })
     })
@@ -116,10 +110,9 @@ router.post('/text/new', function(req, res, next) {
     });
     new_text.save(function(error, text) {
         if (error) {
-            console.log("Error: ", error)
-            res.json({success: false, error: error})
+            res.json(error)
         } else {
-            res.json({success: true})
+            res.json(text)
         }
     });
 });
