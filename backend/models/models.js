@@ -18,9 +18,10 @@ var textSchema = Schema({
         required: false
     },
     time: {
-        type: Date,
+        type: String,
         required: false
-    }
+    },
+    created_at: { type : Date, default: Date.now }
 });
 
 var Text = mongoose.model('Text', textSchema);
