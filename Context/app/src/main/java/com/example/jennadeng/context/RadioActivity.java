@@ -31,7 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class RadioActivity extends AppCompatActivity {
 
     private TextView voiceInput;
     private TextView speakButton;
