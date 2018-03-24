@@ -11,7 +11,10 @@ router.get('/', function(req, res, next) {
 // Post to the database.
 router.post('/text/new', function(req, res, next) {
     var new_text = new models.Text ({
-        text: req.body.text
+        id: req.body.id,
+        message: req.body.message,
+        location: req.body.location,
+        time: req.body.time
     });
     new_text.save(function(error, text) {
         if (error) {

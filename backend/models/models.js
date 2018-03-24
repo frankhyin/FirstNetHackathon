@@ -5,10 +5,22 @@ var Schema = mongoose.Schema;
 mongoose.connect(connect);
 
 var textSchema = Schema({
-    text: {
+    id: {
         type: String,
-        required: true
+        required: false
     },
+    message: {
+        type: String,
+        required: false
+    },
+    location: {
+        type: String,
+        required: false
+    },
+    time: {
+        type: Date,
+        required: false
+    }
 });
 
 var Text = mongoose.model('Text', textSchema);
